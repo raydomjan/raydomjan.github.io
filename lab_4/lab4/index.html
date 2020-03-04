@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Prof A's Demo Page</title>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="header">Prof A's Demo Page</div>
+        <button class="button" onclick="clickMe()">
+          Click me to make a change
+        </button>
+        
+        <div class="content">
+          
+
+          <p>
+            Retro fam narwhal hoodie meggings viral bushwick yr chartreuse.
+            Chartreuse seitan banh mi selfies, woke ennui venmo craft beer. Air
+            plant tumeric retro DIY iPhone poutine. +1 gastropub chillwave,
+            cronut glossier pork belly tacos poke next level fanny pack vegan
+            jianbing lo-fi.
+          </p>
+
+        
+
+
+          </div>
+
+        </div>
+        <div class="footer"></div>
+      </div>
+    </div>
+    <script>
+      function clickMe() {
+
+        const content = document.querySelector(".content");
+        content.innerHTML = "Hello world";
+
+        
+        var name = "Ray Domjan";
+        
+
+
+        var len = name.length;
+        var third = name.substr(2,1).toUpperCase();
+        var last = name.substr(-3,3)
+        var firstname = name.substr(0,3)
+        var lastname = name.substr(4,6)
+
+        var total = firstname.length + lastname.length
+
+        const newtitle = document.querySelector(".header");
+        newtitle.innerHTML = name + "'s" + " Lab 4 " + total;
+
+        document.querySelector(".content").innerHTML +=  "<p class = p1> Your name has " + len + " characters  </p>"; 
+        document.querySelector(".content").innerHTML +=  "<p class = p2> The third character in my name is " + third + " <br>" + last + "  </p>";
+        
+
+
+
+        
+        
+       
+       
+        
+      }
+
+    </script>
+  </body>
+</html>
+
+
+
+
