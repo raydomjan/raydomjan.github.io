@@ -11,7 +11,7 @@
     <div class="wrapper">
       <div class="header">Test JSON page</div>
       <!-- <button class="button" onclick="loadData()">Load Some JSON</button> -->
-      <button class="activate">Click me to replace list
+      <button class="activate" onclick="clickMe()" >Click me to replace list
         entries</button>
       <div class="content">
       </div>
@@ -266,6 +266,40 @@
       { "name": "Zimbabwe", "code": "ZW" }
     ]
     console.log("List of countries in the world", countries);
+
+    const random = []
+
+    
+
+
+
+   function clickMe(){
+    const newtitle = document.querySelector(".header");
+    newtitle.innerHTML = "Ray's List of Countries";
+
+
+    document.querySelector(".content").innerHTML +=  "<ol class = countries></ol>";
+  
+
+    
+
+    for(let i = 0; i <25; i++) {
+      let x = Math.floor(Math.random() * 242) + 1;
+      random.push(x);
+    }
+
+     
+     for (let i = 0; i < random.length; i++){
+       let country = countries[random[i]];
+       document.querySelector(".countries").innerHTML +=  "<li>" + "<strong>" + country["code"] + "</strong>" + " " + country["name"] + " </li>";
+            }
+    
+
+   }
+
+   
+  
+
   </script>
 </body>
 
