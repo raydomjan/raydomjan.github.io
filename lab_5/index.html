@@ -265,20 +265,29 @@
       { "name": "Zambia", "code": "ZM" },
       { "name": "Zimbabwe", "code": "ZW" }
     ]
+    x = countries
     console.log("List of countries in the world", countries);
+    document.querySelector(".content").innerHTML +=  "<ol class = countries></ol>";
 
-    const random = []
+   
 
     
 
 
 
    function clickMe(){
+    const random = []
+  
+    document.querySelector(".content").innerHTML =  "<ol class = countries></ol>";
+
     const newtitle = document.querySelector(".header");
     newtitle.innerHTML = "Ray's List of Countries";
 
+    function sortnum(a,b){
 
-    document.querySelector(".content").innerHTML +=  "<ol class = countries></ol>";
+      return a-b
+    }
+    
   
 
     
@@ -286,16 +295,19 @@
     for(let i = 0; i <25; i++) {
       let x = Math.floor(Math.random() * 242) + 1;
       random.push(x);
+      random.sort(sortnum)
     }
 
      
      for (let i = 0; i < random.length; i++){
        let country = countries[random[i]];
-       document.querySelector(".countries").innerHTML +=  "<li>" + "<strong>" + country["code"] + "</strong>" + " " + country["name"] + " </li>";
+       y = document.querySelector(".countries").innerHTML +=  "<li>" + "<strong>" + country["code"] + "</strong>" + " " + country["name"] + " </li>";
             }
-    
 
+  
    }
+
+
 
    
   
