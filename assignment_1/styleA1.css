@@ -117,7 +117,7 @@ padding: 10px;
 
 @media screen and (max-width:1000px) {
 
-.gen1{
+.map1{
   display: flex ;
   flex-direction: row;
   flex-wrap: wrap;
