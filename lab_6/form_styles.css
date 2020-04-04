@@ -1,15 +1,23 @@
 form {
 
+    margin: 0 auto;
+    width: 500px;
+    padding: 2em;
+    border: 1px solid black;
+    border-radius: 3em;
+    background-color: blanchedalmond;
+
 }
 
 label {
+    font: 1.5em serif
+    
 
 }
 
 input, textarea {
-    
+        width: 100%;
+        font: .75em sans-serif;
+          
 }
 
-ul {
-
-}

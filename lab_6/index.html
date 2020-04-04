@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Forms Lab</title>
+    <title>Lab 6</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <link rel="stylesheet" type="text/css" href="form_styles.css" />
   </head>
@@ -9,17 +9,17 @@
     <div class="wrapper">
       <div class="container">
         <div>
-          <h1>HTML 1 Forms Lab</h1>
+          <h1>Lab 6</h1>
         </div>
         <div>
           <form action="https://nameless-thicket-21836.herokuapp.com/lab" method="post">
             <label for="name">Name</label>
-            <input type="text" id="name" />
+            <input type="text" id="name" value = "Enter you name here" maxlength = "140"/>
             <label for="interests">Interests</label>
             <textarea id="interests" name="interests"
                 rows="5" cols="33"
-                maxlength="140"
-            >by default this element is filled with this text
+              
+            >Replace this text with a list of your interests
             </textarea><br />
             <button class="button" type="submit">Submit</button>
           </form>
