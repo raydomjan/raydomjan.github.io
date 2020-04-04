@@ -2,10 +2,9 @@ form {
 
     margin: 0 auto;
     width: 500px;
-    padding: 2em;
-    border: 1px solid black;
-    border-radius: 3em;
-    background-color: blanchedalmond;
+    
+    
+    
 
 }
 
@@ -16,7 +15,7 @@ label {
 }
 
 input, textarea {
-        width: 100%;
+        width: 60%;
         font: .75em sans-serif;
           
 }
