@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Charts Lab</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="header">Frontend Libraries: Charts Lab</div>
+        <div class="content">
+          When your lab is done, this should be replaced with a useful chart
+          full of food data.
+        </div>
+        <div class="footer">Let's eat out in the future!</div>
+      </div>
+    </div>
+
+    <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+    <script>
+      fetch("https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json")
+        .then((response) => response.json())
+        .then((data) => {
+          const clearEmptyData = data.filter((f) => f.geocoded_column_1);
+          const refined = clearEmptyData.map((m) => ({
+            category: m.category,
+            name: m.name,
+            latLong: m.geocoded_column_1.coordinates,
+          }));
+          return refined;
+        })
+
+        .then((data) => {
+          return data.reduce((result, current) => {
+            if (!result[current.category]) {
+              result[current.category] = [];
+            }
+            result[current.category].push(current);
+            return result;
+          });
+        })
+
+        .then((data) => {
+          console.log("new data", data);
+          const reformattedData = Object.entries(data).map((m, i) => {
+            console.log(m);
+            return {
+              y: m[1].length,
+              label: m[0],
+            };
+          });
+          return reformattedData
+        })
+
+        .then((result) => {
+          console.log(result);
+
+          window.onload = function () {
+            var chart = new CanvasJS.Chart("chartContainer", {
+              animationEnabled: true,
+              title: {
+                text: "Food in PG county",
+              },
+              data: [
+                {
+                  type: "pie",
+                  startAngle: 240,
+                  yValueFormatString: '0',
+                  indexLabel: "{label} {y}",
+                  dataPoints: result
+                },
+              ],
+            });
+            chart.render();
+          };
+        });
+    </script>
+  </body>
+</html>
